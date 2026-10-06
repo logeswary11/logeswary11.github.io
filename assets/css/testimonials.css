@@ -1,0 +1,26 @@
+
+.testimonials-section{height:100vh;height:100dvh;height:100svh;box-sizing:border-box;padding:clamp(1.2rem,3.8svh,3rem) 6.2vw;display:flex;flex-direction:column;gap:clamp(1rem,2svh,1.5rem);position:relative;}
+.testimonials-heading{text-align:center;flex:none}.testimonials-heading h2{font:300 clamp(1.6rem,3vw,3.1rem)/1.2 Georgia,serif;letter-spacing:.045em;color:#e3e3df;margin:0 0 .8rem;text-wrap:balance}.testimonials-heading>p{font-size:clamp(.8rem,1.1vw,1rem);line-height:1.5;color:#a8afaa;margin:0 auto;max-width:45rem;text-wrap:balance;}
+.testimonials-scroll{min-height:0;flex:1;overflow-y:auto;overflow-x:hidden;scrollbar-width:none;-ms-overflow-style:none;padding:1rem .75rem 1.5rem;overscroll-behavior-y:auto;border-radius:1rem}.testimonials-scroll::-webkit-scrollbar{display:none}.testimonials-scroll:focus-visible{outline:1px solid #c2cac5;outline-offset:3px}
+.testimonials-batch{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:clamp(.75rem,1.5vw,1.4rem);min-height:100%;box-sizing:border-box;padding-bottom:1rem}
+.testimonial-card{min-width:0;padding:clamp(.85rem,1.5vw,1.5rem);background:linear-gradient(145deg,#232624eb,#101311f2);border:1px solid #68716a55;border-radius:1rem;box-shadow:inset 0 1px 0 #ffffff1c,0 12px 24px #0007,0 0 20px #ffffff04;transform:translateY(-3px);transition:transform .35s ease,opacity .35s ease;}
+.testimonial-card:hover{transform:translateY(-7px)}.testimonial-card h3{font-size:clamp(.95rem,1.2vw,1.15rem);font-weight:400;margin:0 0 .3rem;color:#f0f2ee}.testimonial-role{margin:0 0 .8rem;font-size:clamp(.75rem,.9vw,.85rem);line-height:1.4;color:#a6aea8}.testimonial-card blockquote{margin:0}.testimonial-card blockquote p{font-size:clamp(.75rem,.95vw,.9rem);line-height:1.55;margin:0;color:#d8ded8;overflow-wrap:anywhere}.testimonials-last{grid-template-rows:auto;min-height:0;padding-top:1rem}.testimonials-last .testimonial-card{grid-column:2;}
+.testimonials-foot{flex:none;text-align:center;position:relative}.testimonials-foot>p{font-size:.7rem;line-height:1.4;color:#9ea69f;margin:0 0 .4rem}.testimonials-down{display:block;margin:0 auto;width:2.7rem;height:2.7rem;border:0;background:transparent;color:#dde4de;cursor:pointer;perspective:400px}.testimonials-down svg{width:2rem;height:2rem;filter:drop-shadow(0 7px 3px #000b);animation:testimonialArrow 2.4s ease-in-out infinite;transform-style:preserve-3d}.testimonials-down:focus-visible{outline:2px solid #edf4ec;outline-offset:3px;border-radius:.4rem}.testimonials-down[disabled]{opacity:.25;cursor:default}.testimonials-down[disabled] svg{animation:none}
+@keyframes testimonialArrow{0%,100%{transform:translateY(-3px) rotateX(22deg) translateZ(4px)}50%{transform:translateY(5px) rotateX(-12deg) translateZ(12px)}}
+@media(max-width:1000px){.testimonials-batch{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto;min-height:0}.testimonials-last .testimonial-card{grid-column:1 / -1}}
+@media(max-width:600px){.testimonials-section{padding:1.5rem 1rem;gap:.8rem}.testimonials-batch{grid-template-columns:1fr}.testimonial-card{padding:1.1rem}.testimonial-card blockquote p{font-size:.85rem}.testimonials-last .testimonial-card{grid-column:auto}.testimonials-foot>p{font-size:.65rem}}
+@media(prefers-reduced-motion:reduce){.testimonial-card,.testimonial-card:hover{transform:none;transition:none}.testimonials-down svg{animation:none}}
+
+/* V48: natural card heights with balanced columns, no empty stretched cards. */
+.testimonials-batch{display:block;columns:3;column-gap:clamp(.75rem,1.5vw,1.4rem);min-height:0;padding-bottom:0}.testimonial-card{break-inside:avoid;display:inline-block;width:100%;box-sizing:border-box;margin:0 0 clamp(.75rem,1.5vw,1.4rem);vertical-align:top;height:auto;min-height:0}.testimonials-last{display:none}.testimonials-foot>p{margin:0}
+@media(max-width:1000px){.testimonials-batch{columns:2}}
+@media(max-width:600px){.testimonials-batch{columns:1}}
+
+/* Retained pitch deck feedback, with clear service attribution. */
+.testimonial-service{margin:1rem 0 0;padding-top:.75rem;border-top:1px solid color-mix(in srgb,currentColor 20%,transparent);font:400 .75rem/1.5 Georgia,serif;color:var(--theme-muted)}
+
+/* Three testimonials across, preserving reading order and natural height. */
+.testimonials-batch{display:grid;columns:auto;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:auto;align-items:start;min-height:0;gap:clamp(.75rem,1.5vw,1.4rem)}
+.testimonials-batch>.testimonial-card{display:block;margin:0;height:auto}
+@media(max-width:1000px){.testimonials-batch{columns:auto;grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.testimonials-batch{columns:auto;grid-template-columns:1fr}}

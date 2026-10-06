@@ -1,0 +1,55 @@
+/* WORK — an editorial masthead within the existing Hero grid. */
+.work-hero-meta{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.45rem 0 .9rem;border-bottom:1px solid var(--line);font-size:.62rem;line-height:1.6;letter-spacing:.16em;color:var(--theme-muted)}
+.work-problem-hero{padding-top:calc(var(--header-height) + clamp(.6rem,1.6svh,1.5rem))}
+.work-hero-copy{--work-content-gap:clamp(2rem,4.8svh,3.5rem);padding-block:clamp(1.6rem,3.6svh,3rem)}
+.work-problem-hero h1{width:100%;font-size:clamp(2.15rem,3.5vw,4.3rem);font-weight:400;line-height:1.1;letter-spacing:-.04em}
+.work-title-line:first-child{font-size:.88em;letter-spacing:-.03em}
+.work-title-line+.work-title-line{margin-top:.28em}
+.work-hero-description{max-width:68ch;font-size:clamp(1rem,1.32vw,1.28rem);line-height:1.8;color:var(--theme-muted)}
+.work-hero-description strong{color:var(--theme-text)}
+.work-credibility h2{max-width:none;margin-bottom:clamp(1.1rem,2.8svh,1.9rem);font-size:clamp(.9rem,1.1vw,1.06rem);text-align:center;text-wrap:balance}
+.work-proof-grid{width:min(100%,54rem);gap:clamp(.8rem,1.5vw,1.4rem)}
+.work-proof-grid>li:nth-child(n){display:grid;grid-template-columns:2.4rem minmax(0,1fr);grid-template-rows:1fr auto;align-content:center;align-items:center;column-gap:.9rem;row-gap:.2rem;min-height:6rem;padding:1.3rem 1.15rem;text-align:left;border-radius:6px;box-shadow:0 4px 0 color-mix(in srgb,var(--theme-muted) 12%,var(--site-base)),0 12px 24px #0002;transform:perspective(900px) rotateX(4deg);transition:transform .25s,box-shadow .25s}
+.work-proof-grid>li::after{border-radius:5px;background:linear-gradient(135deg,color-mix(in srgb,var(--site-base) 93%,var(--theme-text)),var(--site-base) 80%);box-shadow:inset 0 1px 0 #ffffff13}
+.work-proof-grid>li:hover{transform:perspective(900px) rotateX(0deg) translateY(-3px);box-shadow:0 4px 0 color-mix(in srgb,var(--theme-muted) 12%,var(--site-base)),0 16px 25px #0002}
+.proof-index{top:.35rem;left:auto;right:.55rem;font-size:.5rem;opacity:.6}
+.proof-mark{grid-column:1;grid-row:1/3;width:2.3rem;height:2.3rem;stroke:var(--theme-muted);stroke-width:.8;stroke-linecap:round;stroke-linejoin:round;fill:none;filter:drop-shadow(1px 2px 0 #0003)}
+.work-proof-title{grid-column:2;align-self:end;font-size:clamp(.95rem,1.16vw,1.12rem);line-height:1.3;max-width:none;text-wrap:balance}
+.work-proof-subtitle{grid-column:2;align-self:start;font-size:.69rem;line-height:1.5}
+.work-proof-grid>li:nth-child(2) .work-proof-title{font-size:1.65rem;line-height:1}
+.work-proof-grid>li:last-child .work-proof-title{grid-row:1/3;align-self:center}
+@media(max-height:800px) and (min-width:801px){.work-hero-copy{--work-content-gap:1.85rem;padding-block:1.3rem}.work-problem-hero h1{font-size:clamp(2rem,3.25vw,3.7rem)}.work-proof-grid>li:nth-child(n){min-height:5.4rem;padding:1.1rem .9rem}.work-hero-description{font-size:clamp(1rem,1.25vw,1.16rem)}}
+@media(max-width:800px){.work-hero-meta{font-size:.55rem}.work-hero-copy{--work-content-gap:2rem}.work-problem-hero h1{font-size:clamp(1.65rem,4.2vw,2.9rem)}.work-proof-grid>li:nth-child(n){grid-template-columns:1fr;grid-template-rows:auto auto auto;justify-items:center;text-align:center;gap:.3rem;padding:1.1rem .65rem;min-height:7.2rem}.proof-mark{grid-column:1;grid-row:1;width:1.6rem;height:1.6rem}.work-proof-title,.work-proof-subtitle{grid-column:1;grid-row:auto}.work-proof-grid>li:last-child .work-proof-title{grid-row:2/4}.work-proof-title{font-size:.88rem}.work-proof-subtitle{font-size:.68rem}}
+@media(max-width:480px){.work-proof-grid{gap:.55rem}.work-proof-grid>li:nth-child(n){padding:1.1rem .45rem .8rem}.work-problem-hero h1{font-size:clamp(1.6rem,6.1vw,2.2rem)}.work-hero-description{font-size:1rem}.work-proof-title{font-size:.8rem}.work-proof-subtitle{font-size:.66rem}.work-hero-meta span:last-child{letter-spacing:.08em}}
+
+/* ACCESS DENIED — original block-built runner behind the headline. */
+.access-window-content>.comic-access,.access-window-content>#accessDescription{z-index:3}
+.access-runway{position:absolute;inset:.3rem 0 28%;z-index:2;pointer-events:none;overflow:hidden;--block-light:#c5cbd0;--block-mid:#87949f;--block-side:#576671;--block-dark:#35434e}
+html[data-theme=light] .access-runway{--block-light:#a6b2bd;--block-mid:#697d8c;--block-side:#455b6a;--block-dark:#263c4c}
+.block-runner{position:absolute;left:0;bottom:2%;width:100%;transform:translateX(0);animation:runner-travel 7s linear infinite;animation-play-state:paused;opacity:.88}
+.runner-body{display:block;width:clamp(6.5rem,22vw,8rem);height:auto;overflow:visible;animation:runner-bob .36s ease-in-out infinite alternate;animation-play-state:paused;filter:drop-shadow(4px 4px 1px #0002)}
+.block-light{fill:var(--block-light)}.block-mid{fill:var(--block-mid)}.block-side{fill:var(--block-side)}.block-dark{fill:var(--block-dark)}.runner-face{fill:none;stroke:var(--block-dark);stroke-width:2;stroke-linecap:round}.runner-ground{fill:var(--theme-text);opacity:.15}
+.runner-leg{transform-box:view-box;transform-origin:60px 96px;animation:runner-stride .72s ease-in-out infinite;animation-play-state:paused}.runner-leg-back{animation-delay:-.36s}
+.runner-arm{transform-box:view-box;transform-origin:60px 58px;animation:runner-arms .72s ease-in-out infinite;animation-play-state:paused}.runner-arm-front{animation-delay:-.36s}
+.portfolio-dialog[open] :is(.block-runner,.runner-body,.runner-leg,.runner-arm){animation-play-state:running}
+@keyframes runner-travel{0%{transform:translateX(-27%) rotate(-5deg)}100%{transform:translateX(107%) rotate(-5deg)}}
+@keyframes runner-bob{to{transform:translateY(-5px)}}
+@keyframes runner-stride{0%,100%{transform:rotate(-29deg)}50%{transform:rotate(29deg)}}
+@keyframes runner-arms{0%,100%{transform:rotate(28deg)}50%{transform:rotate(-28deg)}}
+/* Keep the cartoon accent present without making readers wait for a pass. */
+.block-runner{animation-delay:-1.7s}
+
+/* LOCATION — a small monochrome cosmos, with a dimensional satellite. */
+.orbital-scene{position:relative;isolation:isolate;width:min(100%,20rem);aspect-ratio:1.16;margin:.6rem auto 0;perspective:650px;--star-colour:#e6edf8;--orbit-colour:#bdcddd3d}
+html[data-theme=light] .orbital-scene{--star-colour:#263d59;--orbit-colour:#263d5930}
+.globe-card .orbital-scene .carousel-globe{position:absolute;inset:8% 7% 0;width:86%;height:auto;aspect-ratio:1;margin:0;z-index:1;mask-image:radial-gradient(ellipse at center,#000 54%,transparent 76%)}
+.cosmos-stars{position:absolute;inset:0;z-index:0;opacity:.6;background-image:radial-gradient(circle at 8% 19%,var(--star-colour) 1px,transparent 1.7px),radial-gradient(circle at 71% 7%,var(--star-colour) .8px,transparent 1.6px),radial-gradient(circle at 21% 73%,var(--star-colour) .7px,transparent 1.4px),radial-gradient(circle at 91% 66%,var(--star-colour) 1px,transparent 1.7px),radial-gradient(circle at 14% 47%,var(--star-colour) .8px,transparent 1.5px),radial-gradient(circle at 86% 88%,var(--star-colour) .7px,transparent 1.5px),radial-gradient(circle at 49% 95%,var(--star-colour) .8px,transparent 1.6px),radial-gradient(circle at 42% 9%,var(--star-colour) 1px,transparent 1.7px);pointer-events:none}
+.cosmos-stars::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 54% 54%,transparent 37%,var(--orbit-colour) 52%,transparent 65%);opacity:.24}
+.orbital-path{position:absolute;inset:24% -2% 18%;z-index:0;border:1px solid var(--orbit-colour);border-radius:50%;transform:rotate(-28deg);pointer-events:none}
+.satellite-float{position:absolute;z-index:2;top:1%;right:-1%;width:32%;pointer-events:none;animation:satellite-drift 7s ease-in-out infinite;animation-play-state:paused}
+.satellite-model{display:block;width:100%;overflow:visible;transform:rotate(-15deg) rotateY(-16deg);filter:drop-shadow(3px 7px 3px #0005)}
+.globe-card:is(.is-active,.is-left,.is-right) .satellite-float{animation-play-state:running}
+@keyframes satellite-drift{0%,100%{transform:translate3d(0,3px,0) rotate(2deg)}50%{transform:translate3d(-6px,-5px,12px) rotate(-4deg)}}
+@media(prefers-reduced-motion:reduce){.work-proof-grid>li:nth-child(n),.work-proof-grid>li:hover{transform:none;transition:none}.block-runner,.runner-body,.runner-leg,.runner-arm,.satellite-float{animation:none!important}.block-runner{left:0;bottom:2%;transform:translateX(7%);opacity:.6}}
+
+.library-page .row .view-label{font-size:.85rem}.library-page .row:focus-visible{outline:2px solid var(--theme-text);outline-offset:4px}

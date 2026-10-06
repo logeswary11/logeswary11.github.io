@@ -1,0 +1,29 @@
+/* Shared editorial header — replaces the Hero segmented control. */
+:root{--header-height:66px}
+.site-header{position:fixed;top:0;left:0;right:0;z-index:35;height:var(--header-height);padding:22px 6.2vw;display:flex;align-items:flex-start;color:var(--theme-text);font-family:Georgia,'Times New Roman',serif;isolation:isolate}
+.site-header::before{content:'';position:absolute;inset:0;z-index:-1;background:var(--site-base);border-bottom:1px solid var(--line);opacity:0;transition:opacity .2s}
+.site-header.is-scrolled::before,.site-header.menu-open::before{opacity:.96}
+.site-header .brand-flip{position:relative;top:auto;left:auto;flex:none;color:var(--theme-text);height:24px}
+.site-header .top{margin-left:auto;position:static;display:flex;align-items:center;gap:18px;font-size:11px;line-height:1.3;letter-spacing:1.8px;color:var(--theme-muted);padding-top:2px}
+.editorial-nav{position:absolute;left:50%;top:18px;transform:translateX(-50%);font-size:11px;line-height:1.3;letter-spacing:1.8px;text-transform:uppercase}
+.editorial-nav ul{display:flex;align-items:center;gap:clamp(1.25rem,2vw,2rem);margin:0;padding:0;list-style:none}
+.editorial-nav a{display:block;padding:7px 0 12px;white-space:nowrap;color:var(--theme-muted);text-decoration:none}
+.editorial-nav a:is(:hover,:focus-visible,[aria-current=page]){color:var(--theme-text)}
+.nav-underline{position:absolute;left:0;bottom:4px;height:1px;background:var(--theme-text);width:0;pointer-events:none;transition:transform 230ms cubic-bezier(.2,.7,.3,1),width 230ms cubic-bezier(.2,.7,.3,1);opacity:0}
+.site-header :is(a,button):focus-visible{outline:2px solid var(--theme-text);outline-offset:5px}
+.menu-control{display:none;background:transparent;border:0;color:var(--theme-text);font:inherit;font-size:11px;letter-spacing:1.8px;padding:0 0 0 1rem;min-height:44px;cursor:pointer}
+/* Removing one flex child transfers its surplus height to the existing spacer;
+   the title/body/Now gaps and the bottom ticker remain on the original system. */
+.destination-page{padding-top:var(--header-height)}
+.destination-page .work-section{padding-top:clamp(1.5rem,4svh,3rem)}
+.destination-page .library-page{padding-top:clamp(2rem,5svh,4rem)}
+/* Values reproduce the Library's prior hero-measured left and outer-right inset. */
+.destination-page .library-page{padding-left:calc(var(--hero-outer-inline) + var(--hero-grid-left))!important;padding-right:var(--hero-outer-inline)!important}
+.destination-page .library-shell{margin:0!important}
+:where(#bio,#work,#library,.work-part2 section){scroll-margin-top:calc(var(--header-height) + 1rem)}
+@media(max-width:1100px){.site-header{align-items:center;padding-block:12px}.site-header .top{display:none}.menu-control{display:block;margin-left:auto}.editorial-nav{display:none}.site-header.menu-open .editorial-nav{display:block;left:0;right:0;top:var(--header-height);transform:none;padding:1rem 6.2vw 1.5rem;background:var(--site-base);border-bottom:1px solid var(--line)}.editorial-nav ul{display:block}.editorial-nav li{border-bottom:1px solid var(--line)}.editorial-nav a{padding:1.1rem 0;min-height:48px}.editorial-nav a[aria-current=page]{text-decoration:underline;text-underline-offset:8px;text-decoration-thickness:1px}.nav-underline{display:none}}
+/* Collision fallback is measured from the real label/status widths. */
+.site-header.is-compact{align-items:center;padding-block:12px}.is-compact .top{display:none}.is-compact .menu-control{display:block;margin-left:auto}.is-compact .editorial-nav{display:none}.is-compact.menu-open .editorial-nav{display:block;left:0;right:0;top:var(--header-height);transform:none;padding:1rem 6.2vw 1.5rem;background:var(--site-base);border-bottom:1px solid var(--line)}.is-compact .editorial-nav ul{display:block}.is-compact .editorial-nav li{border-bottom:1px solid var(--line)}.is-compact .editorial-nav a{padding:1.1rem 0;min-height:48px}.is-compact .nav-underline{display:none}.is-compact .editorial-nav a[aria-current=page]{text-decoration:underline;text-underline-offset:8px}
+@media(max-width:800px){.site-header{padding-inline:22px}.site-header.menu-open .editorial-nav{padding-inline:22px}}
+@media(max-width:600px){.site-header{padding-inline:18px}.site-header.menu-open .editorial-nav{padding-inline:18px}}
+@media(prefers-reduced-motion:reduce){.nav-underline,.site-header::before{transition:none}}

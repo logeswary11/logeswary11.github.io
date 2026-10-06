@@ -1,0 +1,29 @@
+/* V64 — clock-only header, dedicated scouting destination and viewport fixes. */
+.site-header .top{margin-left:auto;display:flex;justify-content:flex-end;white-space:nowrap}
+.site-header #clock{color:var(--theme-muted)}
+.scout-page{min-height:calc(100vh - var(--header-height));min-height:calc(100svh - var(--header-height));min-height:calc(100dvh - var(--header-height));display:flex;align-items:center}
+.scout-page .work-block{border-top:0;width:100%}
+/* Reserve the footer within the available screen, with a small extra bottom inset. */
+.testimonials-section{height:calc(100vh - var(--header-height));height:calc(100dvh - var(--header-height));height:calc(100svh - var(--header-height));padding-bottom:calc(clamp(1.2rem,3.8svh,3rem) + .75rem)}
+.testimonials-foot{flex-shrink:0;padding-inline:1rem;max-width:100%;z-index:2}
+.testimonials-foot>p{max-width:55rem;margin-inline:auto;line-height:1.5;text-wrap:balance}
+/* A bounded top spacer lifts the Hero composition; remaining height sits before
+   its foot ticker. Short viewports still grow naturally instead of cropping. */
+/* Library is a viewport editorial section on roomy displays; its contents can
+   always grow on small/short screens. No card or writing row is clipped. */
+.destination-page .library-page{min-height:calc(100vh - var(--header-height));min-height:calc(100svh - var(--header-height));min-height:calc(100dvh - var(--header-height));padding-top:clamp(1.25rem,3svh,2.5rem);padding-bottom:clamp(1.5rem,3svh,3rem);height:auto;overflow:visible;box-sizing:border-box}
+.library-quote{margin-bottom:clamp(1.2rem,3svh,2.2rem)}
+.lib-tabs{margin-bottom:clamp(1rem,2.5svh,2rem)}
+.library-page .wire{padding:clamp(.6rem,1.5svh,1rem) 0}
+.library-page .project-grid{margin-top:clamp(.75rem,2svh,1.5rem);grid-template-columns:repeat(3,minmax(0,1fr))}
+.library-page .project{min-height:0;padding:clamp(1rem,2vw,2rem);min-width:0}
+.library-page .project h3{font-size:clamp(1.5rem,2.1vw,2rem);margin:clamp(1rem,2.5svh,1.5rem) 0 1rem;overflow-wrap:break-word}
+.library-page .project p{margin-bottom:1.3rem;font-size:clamp(.95rem,1.1vw,1rem)}
+.library-page .row{min-height:3.5rem;padding-block:clamp(.65rem,1.3svh,1rem);min-width:0}
+.library-page .row strong{overflow-wrap:anywhere}
+.library-page .tags{gap:.5rem}.library-page .tag{white-space:normal}
+@media(max-width:1100px){.site-header .top{font-size:10px;letter-spacing:1px;gap:0}.menu-control{margin-left:1.25rem!important}.library-page .project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:800px){.library-page .project-grid{grid-template-columns:1fr}.library-page .project{max-width:100%}}
+@media(max-width:600px){.site-header .top{font-size:9px;letter-spacing:.25px}.site-header .brand-flip{width:32px}.menu-control{margin-left:.75rem!important;font-size:10px;padding-left:0}.testimonials-foot>p{font-size:.7rem}.testimonials-section{padding-bottom:calc(1.5rem + env(safe-area-inset-bottom))}.library-page .row{gap:.5rem}.library-page .row strong{font-size:.9rem}}
+
+.site-header.is-compact .top{display:flex;font-size:10px;letter-spacing:.5px}

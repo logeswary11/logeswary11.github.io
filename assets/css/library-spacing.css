@@ -1,0 +1,55 @@
+/* Equal content-led spacing replaces viewport floors on Library and its footer. */
+.destination-page .library-page{--library-space:clamp(2rem,4svh,3.5rem);min-height:100vh;min-height:100svh;min-height:100dvh;height:auto;padding-top:calc(var(--header-height) + var(--library-space));padding-bottom:var(--library-space);display:flex;align-items:center;box-sizing:border-box}
+.destination-page:has(.library-page) .site-footer{min-height:0;padding-top:0;padding-bottom:clamp(2rem,4svh,3.5rem)}
+.destination-page:has(.library-page) .footer-inner{max-width:none;margin-left:calc(var(--hero-grid-left));margin-right:0}
+/* Contact is a separate semantic footer, with its own editorial boundary. */
+.destination-page:has(.library-page) .library-contact{padding-top:clamp(2rem,4svh,3.5rem);border-top:1px solid var(--line);clear:both;position:relative;display:block}
+.library-page .panel{float:none;position:relative}.library-page .project-grid{align-items:start}
+
+/* Library Hero includes the fixed header inside the same viewport as Bio. */
+.destination-page:has(.library-page){padding-top:0}
+.library-page>.library-shell{width:100%;min-width:0}
+
+/* V71 — the title, attribution and options alone form the Library Hero.
+   Results remain descendants of the existing tab root, below that viewport. */
+.destination-page .library-page{min-height:0;display:block;padding-top:0!important;padding-bottom:0!important}
+.library-intro-hero{min-height:100vh;min-height:100svh;min-height:100dvh;height:auto;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;align-items:stretch;gap:clamp(2rem,6svh,5rem);padding-top:calc(var(--header-height) + clamp(2rem,5svh,4rem));padding-bottom:clamp(2rem,5svh,4rem)}
+.library-intro-hero .library-quote{margin-bottom:0;width:100%;max-width:none}
+.library-intro-hero .lib-tabs{margin:0;justify-content:center;flex-wrap:wrap}
+.library-results{padding-top:clamp(2rem,5svh,4rem);padding-bottom:clamp(2rem,5svh,4rem);border-top:1px solid var(--line)}
+.portfolio-dialog::backdrop{backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);background:rgba(0,0,0,.62)}
+html[data-theme=light] .portfolio-dialog::backdrop{background:rgba(35,40,35,.45)}
+@media(max-width:700px){.library-intro-hero .lib-tabs{width:100%}.library-intro-hero{gap:2rem}}
+
+/* V72 — each selected results panel occupies a Bio-sized editorial viewport.
+   A minimum, rather than a fixed height, lets longer archives grow naturally. */
+.library-results{
+  min-height:100vh;
+  min-height:100svh;
+  min-height:100dvh;
+  height:auto;
+  box-sizing:border-box;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding-top:calc(var(--header-height) + clamp(2rem,5svh,4rem));
+  padding-bottom:calc(var(--header-height) + clamp(2rem,5svh,4rem));
+  scroll-margin-top:var(--header-height);
+}
+.library-results>.panel{width:100%;min-width:0;flex:none}
+.library-results>.panel[hidden]{display:none!important}
+
+/* V73 — begin results immediately; retain the full viewport minimum. */
+.library-results{justify-content:flex-start;border-top:0;padding-top:clamp(1.5rem,3svh,2.5rem);padding-bottom:clamp(1.5rem,3svh,2.5rem)}
+.library-results .rows{border-top:0;margin-top:0}
+/* The heading's existing bottom rule is the sole introductory divider. */
+.library-results .wire{padding-top:0}
+
+/* CSS-only Retro Grid: monochrome perspective behind popup copy. */
+.access-window-content{position:relative;isolation:isolate;overflow:hidden}
+.access-window-content>h3,.access-window-content>p{position:relative;z-index:1}
+.access-retro-grid{position:absolute;inset:0;z-index:0;pointer-events:none;perspective:240px;overflow:hidden;opacity:.24;mask-image:linear-gradient(to bottom,transparent 5%,#000 65%);-webkit-mask-image:linear-gradient(to bottom,transparent 5%,#000 65%)}
+.access-retro-plane{position:absolute;width:220%;height:240%;left:-60%;top:-35%;transform:rotateX(65deg);transform-origin:center;background-image:linear-gradient(to right,var(--theme-muted) 1px,transparent 1px),linear-gradient(to bottom,var(--theme-muted) 1px,transparent 1px);background-size:44px 44px;animation:access-grid-drift 18s linear infinite;animation-play-state:paused}
+.portfolio-dialog[open] .access-retro-plane{animation-play-state:running}
+@keyframes access-grid-drift{from{transform:rotateX(65deg) translateY(0)}to{transform:rotateX(65deg) translateY(44px)}}
+@media(prefers-reduced-motion:reduce){.access-retro-plane{animation:none}}

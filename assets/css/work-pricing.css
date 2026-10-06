@@ -1,0 +1,82 @@
+/* V88 — Work proof boxes and fundraising support. Reuses the exact Hero grid. */
+.work-credibility h2{max-width:none;text-align:left;text-wrap:wrap;font-size:clamp(.95rem,1.15vw,1.15rem)}
+.work-proof-grid{gap:clamp(.8rem,1.5vw,1.4rem);border:0;background:transparent;box-shadow:none;transform:none}
+.work-proof-grid>li:nth-child(n){position:relative;isolation:isolate;overflow:hidden;border:0;border-radius:6px;padding:clamp(1.1rem,2vw,1.8rem);min-height:6.5rem;background:var(--site-base);box-shadow:0 5px 0 color-mix(in srgb,var(--theme-muted) 20%,var(--site-base)),0 15px 26px #0002;transform:translateY(-3px)}
+.work-proof-grid>li::before,.support-rainbow::before{content:'';position:absolute;inset:-150%;z-index:-2;background:conic-gradient(from 0deg,#86a9e2,#c69fda,#d7a5b9,#d8c994,#8fc3b5,#86a9e2);animation:support-rainbow-turn 9s linear infinite}
+.work-proof-grid>li::after{content:'';position:absolute;inset:1px;z-index:-1;border-radius:5px;background:var(--site-base)}
+@keyframes support-rainbow-turn{to{transform:rotate(360deg)}}
+.work-pricing{box-sizing:border-box;position:relative;min-height:100vh;min-height:100svh;min-height:100dvh;display:flex;align-items:center;padding-block:calc(var(--header-height) + clamp(1.5rem,3svh,3rem)) clamp(2rem,5svh,4rem);background:transparent;scroll-margin-top:var(--header-height)}
+.pricing-intro{margin-bottom:clamp(2rem,4svh,3rem)}
+.pricing-intro h2{margin:0 0 1rem;font:400 clamp(1.3rem,2vw,1.8rem)/1.2 Georgia,serif;letter-spacing:-.02em;color:var(--theme-text)}
+.pricing-intro>p{max-width:66ch;margin:0;font:400 clamp(1rem,1.38vw,1.35rem)/1.8 Georgia,serif;color:var(--theme-muted)}
+.fundraising-plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1rem,2vw,2rem)}
+.fundraising-plan{--plan-bg:#f7f7f4;--plan-text:#171b19;--plan-muted:#535a56;display:flex;flex-direction:column;min-width:0;padding:clamp(1.5rem,2.5vw,2.5rem);border:1px solid #ffffff30;border-radius:8px;background:var(--plan-bg);color:var(--plan-text);box-shadow:0 12px 28px #0002}
+html[data-theme=light] .fundraising-plan{--plan-bg:#171b19;--plan-text:#f7f7f4;--plan-muted:#c2c8c3;border-color:#171b1940}
+.fundraising-plan h3{margin:0 0 .8rem;font:400 clamp(1.3rem,2vw,1.8rem)/1.2 Georgia,serif;color:var(--plan-text)}
+.plan-summary{margin:0;font:400 clamp(.95rem,1.15vw,1.1rem)/1.6 Georgia,serif;color:var(--plan-muted)}
+.plan-price{margin:1.5rem 0;display:flex;flex-direction:column;gap:.4rem;font:400 clamp(2rem,3vw,3rem)/1.1 Georgia,serif}
+.plan-price-label{font-size:.7rem;letter-spacing:.12em;color:var(--plan-muted)}
+.support-rainbow{position:relative;isolation:isolate;overflow:hidden;border:0;border-radius:5px;padding:1px;cursor:pointer;font-family:Georgia,serif;box-shadow:0 4px 0 #0003,0 8px 16px #0002;transition:transform .2s}
+.support-rainbow>span{position:relative;display:flex;align-items:center;justify-content:center;min-height:52px;box-sizing:border-box;padding:.8rem 1rem;border-radius:4px;background:#171b19;color:#fff;font-size:clamp(.75rem,.95vw,.9rem);letter-spacing:.05em;text-align:center}
+html[data-theme=light] .support-rainbow>span{background:#f7f7f4;color:#171b19}
+.support-rainbow:hover{transform:translateY(-2px)}
+.support-rainbow:focus-visible{outline:2px solid var(--plan-text,var(--theme-text));outline-offset:5px}
+.plan-purchase{width:100%;flex:none}
+.plan-includes{list-style:none;padding:0;margin:1.75rem 0 0;display:grid;gap:.8rem;font:400 clamp(.95rem,1.05vw,1.05rem)/1.55 Georgia,serif}
+.plan-includes li{display:grid;grid-template-columns:1em minmax(0,1fr);gap:.7rem}
+.checkout-notice{max-width:min(28rem,calc(100vw - 3rem));padding:2rem;border:1px solid var(--line);background:var(--site-base);color:var(--theme-text);font-family:Georgia,serif;border-radius:6px}
+.checkout-notice::backdrop{background:#0008;backdrop-filter:blur(12px)}
+.checkout-notice h2{font-weight:400}.checkout-notice p{line-height:1.6}.checkout-notice button{padding:.75rem 1.5rem;background:var(--theme-text);color:var(--site-base);border:0;font:inherit;cursor:pointer}.checkout-notice button:focus-visible{outline:2px solid var(--theme-text);outline-offset:4px}
+@media(max-width:700px){.fundraising-plans{grid-template-columns:1fr}.work-pricing{padding-block:calc(var(--header-height) + 1.5rem) 2.5rem}.pricing-intro h2{font-size:clamp(1.25rem,5vw,1.6rem)}.pricing-intro>p{font-size:1.05rem}.fundraising-plan{padding:1.5rem}}
+@media(max-width:600px){.work-proof-grid>li:nth-child(n){min-height:5rem}.work-credibility h2{text-align:left}}
+@media(max-height:800px) and (min-width:801px){.pricing-intro>p{font-size:clamp(1rem,1.25vw,1.2rem)}.fundraising-plan{padding:1.5rem}.plan-includes{gap:.55rem}.pricing-intro{margin-bottom:1.75rem}}
+@media(prefers-reduced-motion:reduce){.work-proof-grid>li::before,.support-rainbow::before{animation:none}.support-rainbow{transition:none}.support-rainbow:hover{transform:none}}
+
+/* V89 — compact credentials and editorial service dossiers. */
+.work-proof-grid{width:min(100%,50rem);margin-inline:auto;gap:clamp(.6rem,1.2vw,1rem)}
+.work-proof-grid>li:nth-child(n){min-height:4.5rem;padding:.8rem 1rem;gap:.35rem;border-radius:5px;box-shadow:0 3px 0 #0001,0 7px 15px #0001;transform:translateY(-2px)}
+.work-proof-title{font-size:clamp(.95rem,1.25vw,1.15rem);line-height:1.25}
+.work-proof-subtitle{font-size:clamp(.7rem,.8vw,.8rem);line-height:1.4}
+.pricing-intro>p{max-width:none;text-wrap:wrap}
+@media(min-width:1101px){.pricing-intro>p{white-space:nowrap;font-size:clamp(1rem,1.25vw,1.35rem)}}
+.fundraising-plans{gap:clamp(1rem,2.4vw,2.4rem)}
+.fundraising-plan{position:relative;padding:clamp(1.4rem,2.5vw,2.5rem);border-radius:4px;border:1px solid color-mix(in srgb,var(--plan-text) 22%,var(--plan-bg));box-shadow:5px 5px 0 color-mix(in srgb,var(--plan-text) 16%,var(--plan-bg)),0 16px 28px #0001;transition:transform .25s}
+.fundraising-plan:hover{transform:translateY(-3px)}
+.plan-index{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-bottom:1rem;margin-bottom:1.5rem;border-bottom:1px solid color-mix(in srgb,var(--plan-text) 22%,var(--plan-bg));font-size:.65rem;line-height:1.5;letter-spacing:.12em;color:var(--plan-muted)}
+.plan-index>span:first-child{font-size:.9rem;letter-spacing:0}
+.plan-heading-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:1rem;margin-bottom:1.5rem}
+.fundraising-plan h3{font-size:clamp(1.3rem,1.8vw,1.8rem);margin-bottom:.6rem}
+.plan-summary{max-width:24ch;font-size:clamp(.9rem,1vw,1.05rem)}
+.plan-price{margin:0;align-items:flex-end;text-align:right;font-size:clamp(2rem,2.8vw,2.8rem);letter-spacing:-.04em}
+.plan-price-label{font-size:.6rem;letter-spacing:.1em;white-space:nowrap}
+.plan-includes{border-top:1px solid color-mix(in srgb,var(--plan-text) 22%,var(--plan-bg));padding-top:1.4rem;margin:0 0 1.8rem;gap:.7rem;flex:1;font-size:clamp(.9rem,1vw,1rem)}
+.plan-includes li>span:first-child{font-size:.85em;color:var(--plan-muted)}
+.plan-purchase{margin-top:auto;box-shadow:0 3px 0 #0002,0 6px 12px #0001}
+.support-rainbow>span{min-height:48px;font-size:.75rem;letter-spacing:.09em}
+@media(max-width:600px){.work-proof-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem}.work-proof-grid>li:nth-child(n){padding:.65rem .55rem;min-height:4.25rem;align-items:flex-start;text-align:left}.work-proof-title{font-size:.85rem}.work-proof-subtitle{font-size:.65rem}.plan-heading-row{gap:.75rem}.plan-index{font-size:.6rem}.plan-price{font-size:2rem}}
+@media(max-width:359px){.work-proof-grid{grid-template-columns:1fr}.work-proof-grid>li:nth-child(n){min-height:3.5rem;padding:.7rem 1rem}.plan-heading-row{grid-template-columns:1fr}.plan-price{align-items:flex-start;text-align:left}}
+@media(prefers-reduced-motion:reduce){.fundraising-plan{transition:none}.fundraising-plan:hover{transform:none}}
+
+/* V90 — centred proof statement and refined compact credential tiles. */
+.work-credibility h2{max-width:none;text-align:center;margin-inline:auto;text-wrap:balance}
+.work-proof-grid{width:min(100%,48rem);gap:clamp(.7rem,1.5vw,1.25rem)}
+.work-proof-grid>li:nth-child(n){align-items:center;text-align:center;justify-content:center;padding:1.45rem .8rem 1rem;min-height:5.4rem;gap:.3rem;border-radius:3px;box-shadow:0 4px 0 color-mix(in srgb,var(--theme-muted) 14%,var(--site-base)),0 10px 22px #0002;transform:translateY(-2px)}
+.work-proof-grid>li::after{border-radius:2px;background:var(--site-base);box-shadow:inset 0 1px 0 color-mix(in srgb,var(--theme-text) 12%,transparent)}
+.proof-index{position:absolute;top:.4rem;left:.55rem;font-size:.55rem;letter-spacing:.12em;color:var(--theme-muted);opacity:.8}
+.work-proof-title{font-size:clamp(1rem,1.25vw,1.2rem);font-weight:400;letter-spacing:-.02em;max-width:20ch;text-wrap:balance}
+.work-proof-grid>li:nth-child(2) .work-proof-title{font-size:1.8rem;line-height:1}
+.work-proof-subtitle{font-size:.72rem;color:var(--theme-muted)}
+@media(max-width:600px){.work-proof-grid{gap:.55rem}.work-proof-grid>li:nth-child(n){align-items:center;text-align:center;padding:1.3rem .45rem .8rem;min-height:5.4rem}.work-proof-title{font-size:.85rem}.work-proof-subtitle{font-size:.65rem}.work-proof-grid>li:nth-child(2) .work-proof-title{font-size:1.55rem}}
+
+/* Refined support inclusions: slightly narrower, equal-height dossiers. */
+.fundraising-plans{width:94%;margin-inline:auto;align-items:stretch}
+.fundraising-plan{min-height:34rem;box-sizing:border-box}
+.plan-includes-heading{margin:0;padding-top:1.25rem;border-top:1px solid color-mix(in srgb,var(--plan-text) 22%,var(--plan-bg));font:400 .8rem/1.5 Georgia,serif;color:var(--plan-muted)}
+.plan-includes{border-top:0;padding-top:.8rem}
+.pricing-personal-note{max-width:85ch;margin:1.5rem auto 0;text-align:center;font:400 clamp(.75rem,.85vw,.85rem)/1.7 Georgia,serif;color:var(--theme-muted)}
+@media(max-height:800px) and (min-width:801px){.fundraising-plan{min-height:31rem}}
+@media(max-width:700px){.fundraising-plans{width:100%}.fundraising-plan{min-height:31rem}}
+
+/* Personal support note shares the two service cards’ overall width. */
+.pricing-personal-note{width:94%;max-width:none;box-sizing:border-box}
+@media(max-width:700px){.pricing-personal-note{width:100%}}

@@ -1,0 +1,5 @@
+/* Two equal, viewport-filled groups make the ticker seam continuous. */
+.ticker.is-seamless{display:flex;width:max-content;gap:0;animation:seamless-ticker 28s linear infinite}
+.ticker.is-seamless .ticker-loop-group{display:flex;align-items:center;flex:none;gap:38px;padding-right:38px}
+@keyframes seamless-ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.ticker.is-seamless{animation:none}}

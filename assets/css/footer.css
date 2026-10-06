@@ -1,0 +1,11 @@
+/* Shared footer: typography followed by accessible social icons. */
+.site-footer.compact-footer{min-height:0!important;height:auto!important;padding:clamp(1.5rem,3vw,2.5rem) var(--hero-outer-inline,6.2vw)!important;background:transparent!important;border-top:1px solid var(--line);overflow:visible}
+.compact-footer .compact-footer-row{display:flex;align-items:center;justify-content:flex-start;flex-wrap:wrap;gap:.5rem 1.4rem;max-width:none;margin:0}
+.compact-footer .footer-copyright{font:400 .85rem/1.5 Georgia,serif;color:var(--theme-muted)}
+.compact-footer .socials{display:flex;align-items:center;flex-wrap:wrap;gap:.2rem;margin:0;padding:0}
+.compact-footer .socials a{display:grid;place-items:center;width:44px;height:44px;margin:0;padding:0;border:0;background:transparent;color:var(--theme-text);text-decoration:none;opacity:.7;transition:opacity .18s,transform .18s}
+.compact-footer .socials a::before,.compact-footer .socials a::after{content:none!important}
+.compact-footer .socials svg{display:block;width:19px;height:19px;fill:currentColor}
+.compact-footer .socials a:hover{opacity:1;transform:translateY(-2px)}
+.compact-footer .socials a:focus-visible{opacity:1;outline:2px solid currentColor;outline-offset:2px}
+@media(prefers-reduced-motion:reduce){.compact-footer .socials a{transition:none}.compact-footer .socials a:hover{transform:none}}

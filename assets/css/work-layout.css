@@ -1,0 +1,17 @@
+/* Shared sizing extracted directly from the Work hero's final cascade.
+   Outer padding and inner width/margins are separate in the existing hero.
+   Both hero and Work use these exact rules; there is no independent Work width. */
+:root{--hero-outer-inline:6.2vw;--hero-grid-width:calc(100% - 9.58vw);--hero-grid-left:3.38vw;--hero-grid-right:6.2vw}
+@media(min-width:801px) and (max-width:1100px){:root{--hero-grid-width:calc(100% - 4.88vw);--hero-grid-left:-1.32vw}}
+@media(max-width:800px){:root{--hero-outer-inline:22px;--hero-grid-width:calc(100% - 44px);--hero-grid-left:22px;--hero-grid-right:22px}}
+@media(max-width:600px){:root{--hero-outer-inline:18px;--hero-grid-width:calc(100% - 36px);--hero-grid-left:18px;--hero-grid-right:18px}}
+.hero-grid-shell{padding-left:var(--hero-outer-inline)!important;padding-right:var(--hero-outer-inline)!important}
+.hero-grid-shell>.hero-content-grid{width:var(--hero-grid-width)!important;max-width:none!important;margin-left:var(--hero-grid-left)!important;margin-right:var(--hero-grid-right)!important;box-sizing:border-box}
+.work-section{height:auto;min-height:100vh;min-height:100svh;min-height:100dvh;padding-top:0;padding-bottom:0;overflow:visible}
+.work-frame{position:relative;border:0;padding:0}
+.work-frame::before{content:"";position:absolute;inset:clamp(1rem,3svh,2rem) calc(-1 * clamp(.5rem,1vw,1rem));border:1px solid var(--theme-muted);opacity:.3;pointer-events:none}
+.work-block{box-sizing:border-box;padding:clamp(2rem,5svh,4rem) 0}
+#founder-work{height:auto;min-height:100vh;min-height:100svh;min-height:100dvh;display:flex;flex-direction:column;justify-content:center;border-top:0}
+.work-block-head{flex-wrap:wrap;line-height:1.6}
+.scout-grid>*{min-width:0}.work-copy,.work-h2{overflow-wrap:break-word}
+@media(max-width:800px){.scout-grid{grid-template-columns:minmax(0,1fr);gap:2rem}.offers{grid-template-columns:minmax(0,1fr)}.work-h2{font-size:clamp(1.75rem,6vw,2.6rem)}}
